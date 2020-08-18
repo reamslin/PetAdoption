@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{pet.name}}{% endblock %}
+
+{% block content %}
+
+<h1>{{pet.name}}</h1>
+<h2>{{pet.species}}</h2>
+<img src='{{pet.image_url()}}'>
+<h3>Age: {{pet.age}}</h3>
+<p>{{pet.notes}}</p>
+{% if pet.available %}
+<b>{{pet.name}} is available for adoption!</b>
+{% endif %}
+<br>
+
+<a href='/{{pet.id}}/edit'>Edit this pet</a>
+<br>
+<a href='/'>Back to all pets</a>
+
+{% endblock %}
